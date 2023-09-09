@@ -2,6 +2,19 @@ return {
     -- Configs for Nvim LSP client
     {"neovim/nvim-lspconfig",
         config = function()
+
+            -- See :help lspconfig-global-defaults
+            local lsp_defaults = {
+                capabilities = require("cmp_nvim_lsp").default_capabilities()
+            }
+
+            local lspconfig = require('lspconfig')
+            lspconfig.util.default_config = vim.tbl_deep_extend(
+                'force',
+                lspconfig.util.default_config,
+                lsp_defaults
+            )
+
             -- Setup language servers.
             --local lspconfig = require('lspconfig')
             -- lspconfig.pyright.setup {}
