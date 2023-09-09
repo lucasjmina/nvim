@@ -12,11 +12,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ","
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  ui = {
+    icons = {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
+  },
+})
 
 require('settings')
 require('keymaps')
+require('autocmds')
 
-vim.cmd([[
-    autocmd BufNewFile  *.R	0r ~/.config/nvim/skeletons/skel.R |goto 99|
-]])
