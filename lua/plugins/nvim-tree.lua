@@ -13,7 +13,10 @@ return {
             require('nvim-tree').setup {
                 disable_netrw = false,
                 hijack_netrw = true,
-                renderer = {        
+                git = {
+                    enable = false
+                },
+                renderer = {
                     icons = {
                         web_devicons = {
                             file = {
@@ -26,33 +29,23 @@ return {
                             },
                         },
                         glyphs = {
-                            default = "🗎",
-                            symlink = "🖇",
-                            bookmark = "٭",
+                            default = "",
+                            symlink = "",
+                            bookmark = "*",
                             modified = "●",
                             folder = {
-                                arrow_closed = "",
-                                arrow_open = "",
-                                default = "🗀",
-                                open = "🗁",
-                                empty = "🗀",
-                                empty_open = "🗁",
-                                symlink = "🖇",
-                                symlink_open = "🖇",
-                            },
-                            git = {
-                                unstaged = "☒",
-                                staged = "☑",
-                                unmerged = "⛕",
-                                renamed = "✏",
-                                untracked = "⚠",
-                                deleted = "🗑",
-                                ignored = "◌",
+                                arrow_closed = "→",
+                                arrow_open = "↓",
+                                default = "",
+                                open = "",
+                                empty = "",
+                                empty_open = "",
+                                symlink = "",
+                                symlink_open = "",
                             },
                         },
                     },
-                },
-            }    
+                } }
         end,
     },
 }
