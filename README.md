@@ -26,3 +26,4 @@ This config is aimed mostly for doing stuff in R.
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [telescope](https://github.com/nvim-telescope/telescope.nvim)
