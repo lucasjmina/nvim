@@ -17,35 +17,21 @@ return {
                     enable = false
                 },
                 renderer = {
+                    indent_markers = {
+                        enable = true
+                    },
                     icons = {
-                        web_devicons = {
-                            file = {
-                                enable = false,
-                                color = false,
-                            },
-                            folder = {
-                                enable = false,
-                                color = false,
-                            },
-                        },
-                        glyphs = {
-                            default = "",
-                            symlink = "",
-                            bookmark = "*",
-                            modified = "●",
-                            folder = {
-                                arrow_closed = "→",
-                                arrow_open = "↓",
-                                default = "",
-                                open = "",
-                                empty = "",
-                                empty_open = "",
-                                symlink = "",
-                                symlink_open = "",
-                            },
+                        show = {
+                            folder = false,
+                            file = false,
+                            git = false,
+                            folder_arrow = false,
+                            diagnostics = false,
+                            modified = false
                         },
                     },
-                } }
+                },
+            }
         end,
     },
 }
