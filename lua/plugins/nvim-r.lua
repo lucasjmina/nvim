@@ -22,6 +22,12 @@ return {
                     vim.keymap.set("i", ">>", "<Esc>:normal! a %>%<CR>a", {buffer = args.buf})
                 end
             })
+            -- For not showing the ObjectBrowser in the buffer list
+            -- but also makes it not close when exiting R, quite annoying so disabled for now
+            -- vim.api.nvim_create_autocmd("FileType", {
+            --     pattern = "rbrowser",
+            --     command = "set nobl",
+            -- })
         end,
     }
 }
