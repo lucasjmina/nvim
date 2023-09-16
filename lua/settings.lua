@@ -22,3 +22,9 @@ set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
 set.foldenable = false
 set.foldlevel = 9999
+
+-- Settings for netwr
+vim.g.netrw_keepdir = 0
+vim.g.netrw_winsize = 20
+vim.g.netrw_localcopydircmd = "cp -r"
+
