@@ -63,13 +63,10 @@ return {
                     end, { "i", "s" }),
                 }),
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                    { name = 'path' },
-                    -- { name = 'ultisnips' }, -- For ultisnips users.
-                    -- { name = 'snippy' }, -- For snippy users.
-                }, {
-                        { name = 'buffer' },
+                    { name = 'nvim_lsp', priority = 10},
+                    { name = 'luasnip', priority = 9},
+                    { name = 'path', priority = 8},
+                    { name = 'buffer', priority = 0, keyword_length = 3},
                     }),
 
                 formatting = {
@@ -92,12 +89,11 @@ return {
             -- Set configuration for specific filetype.
             cmp.setup.filetype('r', {
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                    { name = 'path' },
-                    { name = 'cmp_nvim_r' },
-                }, {
-                        { name = 'buffer' },
+                    { name = 'cmp_nvim_r', priority = 10},
+                    { name = 'nvim_lsp', priority = 9},
+                    { name = 'luasnip', priority = 8},
+                    { name = 'path', priority = 7},
+                    { name = 'buffer', priority = 0, keyword_length = 3},
                     })
             })
 
@@ -105,7 +101,7 @@ return {
             cmp.setup.cmdline({ '/', '?' }, {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = {
-                    { name = 'buffer' }
+                    { name = 'buffer', keyword_length = 3}
                 }
             })
 
