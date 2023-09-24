@@ -28,6 +28,7 @@ return {
                     live_grep = {disable_devicons = true},
                     buffers = {
                         disable_devicons = true,
+                        sort_lastused = true,
                         sort_mru = true
                     },
                     help_tags = {disable_devicons = true},
@@ -38,7 +39,8 @@ return {
                         git_status = false,
                         select_buffer = true,
                         display_stat = false,
-                        grouped = false
+                        grouped = false,
+                        respect_gitignore = false
                     }
                 }
             }
