@@ -16,7 +16,7 @@ set.statusline='[%n] %y %F%m%=%=line:%l/%L col:%v'
 set.number = true
 set.relativenumber = true
 set.signcolumn = 'number'
-
+set.title = true
 -- Folds settings for treesitter
 set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
