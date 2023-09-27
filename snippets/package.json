@@ -5,6 +5,10 @@
             {
                 "language": ["r", "rmd"],
                 "path": "./r.json"
+            },
+            {
+                "language": "arduino",
+                "path": "./arduino.json"
             }
         ]
     }
