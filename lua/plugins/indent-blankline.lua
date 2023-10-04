@@ -6,14 +6,16 @@ return {
             --vim.opt.listchars:append "eol:↴"
             require("ibl").setup {
                 indent = {char = "▏"},
-                filetype_exclude = {
-                    "lspinfo",
-                    "packer",
-                    "checkhealth",
-                    "help",
-                    "man",
-                    "rdoc",
-                    "",
+                exclude = {
+                    filetypes = {
+                        "lspinfo",
+                        "packer",
+                        "checkhealth",
+                        "help",
+                        "man",
+                        "rdoc",
+                        "",
+                    }
                 },
             }
         end
