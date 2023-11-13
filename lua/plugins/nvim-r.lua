@@ -1,5 +1,6 @@
 return {
     {"jalvesaq/Nvim-R",
+        ft = "r",
         config = function()
             vim.g.R_assign_map = '<M-->'
             vim.g.R_csv_app = "terminal:vd"
