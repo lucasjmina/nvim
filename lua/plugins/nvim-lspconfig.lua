@@ -3,6 +3,12 @@ return {
     {"neovim/nvim-lspconfig",
         config = function()
 
+            -- Use LSP root_dir to se working directory
+            -- add  on_attach = custom_lsp_attach to server config
+            -- local custom_lsp_attach = function(client)
+            --     vim.api.nvim_set_current_dir(client.config.root_dir)
+            -- end
+
             -- See :help lspconfig-global-defaults
             local lsp_defaults = {
                 capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -16,7 +22,9 @@ return {
             )
             -- Setup language servers.
             lspconfig.lua_ls.setup {}
-            lspconfig.clangd.setup {}
+            lspconfig.clangd.setup {
+            --    on_attach = custom_lsp_attach,
+            }
             lspconfig.arduino_language_server.setup {}
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
