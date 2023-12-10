@@ -25,7 +25,7 @@ return {
             lspconfig.clangd.setup {
             --    on_attach = custom_lsp_attach,
             }
-            lspconfig.arduino_language_server.setup {}
+            lspconfig.bashls.setup {}
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
             --     settings = {
