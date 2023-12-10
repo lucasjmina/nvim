@@ -40,6 +40,18 @@ return {
         "vim",
         "vimdoc",
 	    "r",
+        "c",
+        "cpp",
+        "arduino",
+        "comment",
+        "git_config",
+        "git_rebase",
+        "gitcommit",
+        "gitignore",
+        "gitattributes",
+        "ini",
+        "make",
+        "python"
       },
       incremental_selection = {
         enable = true,
