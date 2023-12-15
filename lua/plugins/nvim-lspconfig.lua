@@ -26,6 +26,7 @@ return {
             --    on_attach = custom_lsp_attach,
             }
             lspconfig.bashls.setup {}
+            lspconfig.r_language_server.setup {}
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
             --     settings = {
