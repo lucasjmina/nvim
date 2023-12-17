@@ -5,9 +5,9 @@ return {
 
             -- Use LSP root_dir to se working directory
             -- add  on_attach = custom_lsp_attach to server config
-            -- local custom_lsp_attach = function(client)
-            --     vim.api.nvim_set_current_dir(client.config.root_dir)
-            -- end
+            local custom_lsp_attach = function(client)
+                vim.api.nvim_set_current_dir(client.config.root_dir)
+            end
 
             -- See :help lspconfig-global-defaults
             local lsp_defaults = {
@@ -26,7 +26,10 @@ return {
             --    on_attach = custom_lsp_attach,
             }
             lspconfig.bashls.setup {}
-            lspconfig.r_language_server.setup {}
+            lspconfig.r_language_server.setup {
+                root_dir = lspconfig.util.root_pattern("*.Rproj", ".git"),
+                on_attach = custom_lsp_attach
+            }
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
             --     settings = {
