@@ -9,7 +9,7 @@ set.clipboard = 'unnamedplus'
 set.colorcolumn = '100'
 set.wrap = true
 set.linebreak = true
-set.autochdir = true
+set.autochdir = false
 set.smartindent = true
 set.expandtab = true
 set.statusline='[%n] %y %F%m%=%=line:%l/%L col:%v'
