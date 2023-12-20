@@ -23,7 +23,7 @@ return {
             -- Setup language servers.
             lspconfig.lua_ls.setup {}
             lspconfig.clangd.setup {
-            --    on_attach = custom_lsp_attach,
+                on_attach = custom_lsp_attach,
             }
             lspconfig.bashls.setup {}
             lspconfig.r_language_server.setup {
