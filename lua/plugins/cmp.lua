@@ -90,6 +90,7 @@ return {
             -- Set configuration for specific filetype.
             cmp.setup.filetype('r', {
                 sources = cmp.config.sources({
+                    { name = 'r_constants', priority = 11},
                     { name = 'cmp_nvim_r', priority = 10},
                     { name = 'nvim_lsp', priority = 9},
                     { name = 'luasnip', priority = 8},
