@@ -5,3 +5,4 @@
 - VisiData
 - fd
 - ripgrep
+- ranger
