@@ -17,6 +17,7 @@ set.number = true
 set.relativenumber = true
 set.signcolumn = 'number'
 set.title = true
+set.termguicolors = true
 -- Folds settings for treesitter
 set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
