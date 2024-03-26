@@ -27,6 +27,8 @@ return {
             lspconfig.r_language_server.setup {
                 root_dir = lspconfig.util.root_pattern("*.Rproj", ".git"),
             }
+            lspconfig.marksman.setup {}
+            lspconfig.texlab.setup {}
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
             --     settings = {
