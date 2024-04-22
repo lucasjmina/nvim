@@ -7,7 +7,8 @@ return {
             "hrsh7th/cmp-path",
             "saadparwaiz1/cmp_luasnip",
             "jalvesaq/cmp-nvim-r",
-            "hrsh7th/cmp-cmdline"
+            "hrsh7th/cmp-cmdline",
+            "micangl/cmp-vimtex"
         },
         config = function()
 
@@ -68,6 +69,7 @@ return {
                     { name = 'luasnip', priority = 9},
                     { name = 'path', priority = 8},
                     { name = 'buffer', priority = 0, keyword_length = 3},
+                    { name = "vimtex"}
                     }),
 
                 formatting = {
