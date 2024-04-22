@@ -1,6 +1,6 @@
 return {
     {"jalvesaq/Nvim-R",
-        ft = "r",
+        ft = {"r", "rmd"},
         config = function()
             vim.g.R_assign_map = '<M-->'
             vim.g.R_csv_app = "terminal:vd"
@@ -18,6 +18,7 @@ return {
             vim.g.R_min_editor_width = 100
             vim.g.rout_follow_colorscheme = 1
             vim.g.R_nvim_wd = 1
+            vim.g.R_pdfviewer = "evince"
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = {"r", "rmd", "rnoweb"},
                 callback = function(args)
