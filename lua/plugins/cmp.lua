@@ -65,10 +65,10 @@ return {
                     end, { "i", "s" }),
                 }),
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp', priority = 10},
-                    { name = 'luasnip', priority = 9},
-                    { name = 'path', priority = 8},
-                    { name = 'buffer', priority = 0, keyword_length = 3},
+                    { name = 'nvim_lsp'},
+                    { name = 'luasnip'},
+                    { name = 'path'},
+                    { name = 'buffer', keyword_length = 3},
                     { name = "vimtex"}
                     }),
 
@@ -92,12 +92,11 @@ return {
             -- Set configuration for specific filetype.
             cmp.setup.filetype('r', {
                 sources = cmp.config.sources({
-                    { name = 'r_constants', priority = 11},
-                    { name = 'cmp_nvim_r', priority = 10},
-                    { name = 'nvim_lsp', priority = 9},
-                    { name = 'luasnip', priority = 8},
-                    { name = 'path', priority = 7},
-                    { name = 'buffer', priority = 0, keyword_length = 3},
+                    { name = 'cmp_nvim_r'},
+                    { name = 'nvim_lsp'},
+                    { name = 'luasnip'},
+                    { name = 'path'},
+                    { name = 'buffer', keyword_length = 3},
                     })
             })
 
