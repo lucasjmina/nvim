@@ -34,3 +34,4 @@ require("lazy").setup("plugins", {
 require('settings')
 require('keymaps')
 require('autocmds')
+require("user_cmds")
