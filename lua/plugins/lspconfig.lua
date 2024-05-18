@@ -18,14 +18,13 @@ return {
                 lsp_defaults
             )
             -- Setup language servers.
-            lspconfig.lua_ls.setup {
-                root_dir = lspconfig.util.root_pattern(".git")
-            }
-            lspconfig.clangd.setup {
-            }
+            lspconfig.lua_ls.setup {}
+            lspconfig.clangd.setup {}
             lspconfig.bashls.setup {}
             lspconfig.r_language_server.setup {
-                root_dir = lspconfig.util.root_pattern("*.Rproj", ".git"),
+                root_dir = function(fname)
+                    return lspconfig.util.root_pattern("*.Rproj", ".git")(fname) or vim.loop.os_homedir()
+                end,
             }
             lspconfig.marksman.setup {}
             lspconfig.texlab.setup {}
