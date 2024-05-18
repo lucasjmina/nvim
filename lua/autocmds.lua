@@ -10,3 +10,8 @@ vim.api.nvim_create_autocmd("TermOpen", {
     pattern = "*",
     command = ("setlocal nonumber norelativenumber")
 })
+
+vim.api.nvim_create_autocmd("BufNewFile",{
+    pattern = "*",
+    command = ("%s#<eval>\\(.\\{-\\}\\)</eval>#\\=eval(submatch(1))#ge | goto 99")
+})
