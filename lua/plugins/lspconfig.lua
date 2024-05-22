@@ -23,16 +23,6 @@ return {
             lspconfig.bashls.setup {}
             lspconfig.r_language_server.setup {
                 cmd = {require("mason-registry").get_package("r-languageserver"):get_install_path() .. "/bin/r-languageserver"},
-                settings = {
-                    r = {
-                        lsp = {
-                            server_capabilities = {
-                                completionProvider = false,
-                                completionItemResolve = false
-                            }
-                        }
-                    }
-                },
                 root_dir = function(fname)
                     return lspconfig.util.root_pattern("*.Rproj", ".git")(fname) or vim.loop.os_homedir()
                 end,
