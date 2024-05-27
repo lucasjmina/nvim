@@ -32,7 +32,7 @@ return {
                 },
                 window = {
                     --completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    -- documentation = cmp.config.window.bordered(),
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -90,7 +90,7 @@ return {
             })
 
             -- Set configuration for specific filetype.
-            cmp.setup.filetype('r', {
+            cmp.setup.filetype({'r', 'rmd'}, {
                 sources = cmp.config.sources({
                     { name = 'cmp_nvim_r'},
                     { name = 'nvim_lsp'},
