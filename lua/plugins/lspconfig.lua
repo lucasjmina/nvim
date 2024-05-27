@@ -29,13 +29,6 @@ return {
             }
             lspconfig.marksman.setup {}
             lspconfig.texlab.setup {}
-            -- lspconfig.rust_analyzer.setup {
-            --     -- Server-specific settings. See `:help lspconfig-setup`
-            --     settings = {
-            --         ['rust-analyzer'] = {},
-            --     },
-            -- }
-
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -70,25 +63,6 @@ return {
                         vim.lsp.buf.format { async = true }
                     end, opts)
                     vim.diagnostic.config({virtual_text = false})
-
-                    -- Dialog borders
-                    local _border = "rounded"
-                    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-                        vim.lsp.handlers.hover, {
-                            border = _border
-                        }
-                    )
-                    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-                        vim.lsp.handlers.signature_help, {
-                            border = _border
-                        }
-                    )
-                    vim.diagnostic.config{
-                        float={border=_border}
-                    }
-                    require('lspconfig.ui.windows').default_options = {
-                        border = _border
-                    }
                 end,
             })
         end
