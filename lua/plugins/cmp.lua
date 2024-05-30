@@ -5,9 +5,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
-        "saadparwaiz1/cmp_luasnip",
-        "jalvesaq/cmp-nvim-r",
-        "micangl/cmp-vimtex"
+        "saadparwaiz1/cmp_luasnip"
     },
     config = function()
         local has_words_before = function()
@@ -60,17 +58,6 @@ return {
                 { name = 'luasnip' },
                 { name = 'path', option = { get_cwd = function() return vim.fn.getcwd() end, }},
                 { name = 'buffer',  keyword_length = 3 },
-                { name = "vimtex" }
-            }),
-            -- Set configuration for specific filetype.
-            cmp.setup.filetype({ 'r', 'rmd' }, {
-                sources = cmp.config.sources({
-                    { name = 'cmp_nvim_r' },
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                    { name = 'path', option = { get_cwd = function() return vim.fn.getcwd() end, } },
-                    { name = 'buffer', keyword_length = 3 },
-                })
             }),
             formatting = {
                 format = function(entry, vim_item)
@@ -78,8 +65,6 @@ return {
                     vim_item.menu = "menu"
                     vim_item.menu = ({
                         path = "[PATH]",
-                        cmp_nvim_r = "[R]",
-                        r_constants = "[R]",
                         nvim_lsp = "[LSP]",
                         buffer = "[BUFFER]",
                         luasnip = "[LSNIP]"
