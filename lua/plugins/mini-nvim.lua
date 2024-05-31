@@ -1,5 +1,6 @@
 return {
     'echasnovski/mini.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     version = false,
     config = function()
         require('mini.surround').setup()
@@ -29,7 +30,7 @@ return {
 
         require('mini.files').setup({
             -- Do not show icons
-            content = { prefix = function() end },
+            -- content = { prefix = function() end },
             vim.api.nvim_set_keymap("n", "<leader>fe", "", {
                 noremap = true,
                 callback = function()
@@ -39,6 +40,8 @@ return {
         })
 
         require('mini.indentscope').setup({ symbol = "│" })
+
+        require('mini.statusline').setup()
 
         require("mini.base16").setup({
             palette = {
