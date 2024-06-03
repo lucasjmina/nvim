@@ -3,21 +3,17 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
     version = false,
     config = function()
+        require('mini.extra').setup()
+
         require('mini.surround').setup()
 
-        require('mini.pairs').setup()
-
-        require('mini.pick').setup({
-            vim.keymap.set("n", "<leader>pf", "<cmd>Pick files<CR>", {}),
-            vim.keymap.set("n", "<leader>pb", "<cmd>Pick buffers<CR>", {}),
-            vim.keymap.set("n", "<leader>pg", "<cmd>Pick grep_live<CR>", {}),
-            vim.keymap.set("n", "<leader>pl", "<cmd>Pick buf_lines<CR>", {}),
-            vim.keymap.set("n", "<leader>pd", "<cmd>Pick diagnostic scope='current'<CR>", {}),
-            vim.keymap.set("n", "<leader>ps", "<cmd>Pick lsp scope='document_symbol'<CR>", {}),
-            vim.keymap.set("n", "<leader>pr", "<cmd>Pick lsp scope='references'<CR>", {}),
+        require('mini.pairs').setup({
+            mappings = {
+                ["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\`].", register = { cr = false } },
+            }
         })
 
-        require('mini.extra').setup()
+        require('mini.pick').setup()
 
         require('mini.bufremove').setup({
             vim.api.nvim_set_keymap("n", "<leader>bd", "", {
@@ -26,6 +22,14 @@ return {
                     MiniBufremove.delete()
                 end
             })
+        })
+
+        local ai = require('mini.ai')
+        ai.setup({
+            custom_textobjects = {
+                B = MiniExtra.gen_ai_spec.buffer(),
+                F = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
+            },
         })
 
         require('mini.files').setup({

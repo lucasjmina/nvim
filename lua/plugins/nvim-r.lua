@@ -1,6 +1,5 @@
 return {
     {"jalvesaq/Nvim-R",
-        ft = {"r", "rmd"},
         config = function()
             vim.g.R_assign_map = '<M-->'
             vim.g.R_df_viewer = "View(%s)"
@@ -19,18 +18,6 @@ return {
             vim.g.rout_follow_colorscheme = 1
             vim.g.R_nvim_wd = 1
             vim.g.R_pdfviewer = "evince"
-            vim.api.nvim_create_autocmd("FileType", {
-                pattern = {"r", "rmd", "rnoweb"},
-                callback = function(args)
-                    vim.keymap.set("i", ">>", "<Esc>:normal! a %>%<CR>a", {buffer = args.buf})
-                end
-            })
-            -- For not showing the ObjectBrowser in the buffer list
-            -- but also makes it not close when exiting R, quite annoying so disabled for now
-            -- vim.api.nvim_create_autocmd("FileType", {
-            --     pattern = "rbrowser",
-            --     command = "set nobl",
-            -- })
         end,
     }
 }

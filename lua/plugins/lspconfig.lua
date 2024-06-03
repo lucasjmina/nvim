@@ -1,70 +1,47 @@
 return {
     -- Configs for Nvim LSP client
-    {"neovim/nvim-lspconfig",
-        config = function()
-
-            -- Use LSP root_dir to se working directory
-            -- add  on_attach = custom_lsp_attach to server config
-
-            -- See :help lspconfig-global-defaults
-            local lsp_defaults = {
-                capabilities = require("cmp_nvim_lsp").default_capabilities()
-            }
-
-            local lspconfig = require('lspconfig')
-            lspconfig.util.default_config = vim.tbl_deep_extend(
-                'force',
-                lspconfig.util.default_config,
-                lsp_defaults
-            )
-            -- Setup language servers.
-            lspconfig.lua_ls.setup {}
-            lspconfig.clangd.setup {}
-            lspconfig.bashls.setup {}
-            lspconfig.r_language_server.setup {
-                cmd = {require("mason-registry").get_package("r-languageserver"):get_install_path() .. "/bin/r-languageserver"},
-                root_dir = function(fname)
-                    return lspconfig.util.root_pattern("*.Rproj", ".git")(fname) or vim.loop.os_homedir()
-                end,
-            }
-            lspconfig.marksman.setup {}
-            lspconfig.texlab.setup {}
-            -- Global mappings.
-            -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-            vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-            vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-            vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
-
-            -- Use LspAttach autocommand to only map the following keys
-            -- after the language server attaches to the current buffer
-            vim.api.nvim_create_autocmd('LspAttach', {
-                group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-                callback = function(ev)
-
-                    -- Buffer local mappings.
-                    -- See `:help vim.lsp.*` for documentation on any of the below functions
-                    local opts = { buffer = ev.buf }
-                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-                    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-                    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-                    vim.keymap.set('n', '<space>wl', function()
-                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                    end, opts)
-                    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-                    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-                    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-                    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-                    vim.keymap.set('n', '<space>f', function()
-                        vim.lsp.buf.format { async = true }
-                    end, opts)
-                    vim.diagnostic.config({virtual_text = false})
-                end,
-            })
+    "neovim/nvim-lspconfig",
+    config = function()
+        local lspconfig = require('lspconfig')
+        local path = function(server_name)
+            return { require("mason-registry").get_package(server_name):get_install_path() .. "/bin/" .. server_name }
         end
-    }
+        -- Set neovim cwd with lsp root
+        -- local custom_attach = function(client)
+        --     vim.fn.chdir(client.config.root_dir)
+        -- end
+        local diagnostic_opts = {
+            -- Show gutter sings
+            signs = {
+                -- With highest priority
+                priority = 9999,
+                -- Only for warnings and errors
+                severity = { min = 'WARN', max = 'ERROR' },
+            },
+            -- Show virtual text only for errors
+            virtual_text = { severity = { min = 'ERROR', max = 'ERROR' } },
+            -- Don't update diagnostics when typing
+            update_in_insert = false,
+        }
+
+        vim.diagnostic.config(diagnostic_opts)
+
+        -- Setup language servers.
+        lspconfig.lua_ls.setup {}
+
+        lspconfig.clangd.setup {}
+
+        lspconfig.bashls.setup {}
+
+        lspconfig.r_language_server.setup {
+            cmd = path("r-languageserver"),
+            root_dir = function(fname)
+                return lspconfig.util.root_pattern("*.Rproj", ".git")(fname) or vim.loop.os_homedir()
+            end,
+        }
+
+        lspconfig.marksman.setup {}
+
+        lspconfig.texlab.setup {}
+    end
 }
