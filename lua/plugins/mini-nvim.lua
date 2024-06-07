@@ -5,6 +5,8 @@ return {
     config = function()
         require('mini.extra').setup()
 
+        require('mini.notify').setup()
+
         require('mini.surround').setup()
 
         require('mini.pairs').setup({
@@ -30,5 +32,23 @@ return {
         require('mini.indentscope').setup({ symbol = "│" })
 
         require('mini.statusline').setup()
+
+        require('mini.tabline').setup()
+
+        require('mini.trailspace').setup({})
+
+        require('mini.splitjoin').setup()
+
+        require('mini.move').setup()
+
+        require('mini.cursorword').setup()
+
+        require('mini.git').setup()
+
+        require('mini.diff').setup({
+            view = {
+                style = "number"
+            }
+        })
     end
 }
