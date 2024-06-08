@@ -17,3 +17,6 @@ vim.g.r_indent_ess_compatible = 0
 
 -- Use specific comment headers
 vim.bo.comments = [[:#',:###,:##,:#]]
+
+-- Set textwidth
+set.textwidth = 100
