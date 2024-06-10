@@ -41,6 +41,7 @@ nmap_leader('ef', '<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>',  
 -- f is for 'fuzzy find'
 nmap_leader('f/', '<Cmd>Pick history scope="/"<CR>',                 '"/" history')
 nmap_leader('f:', '<Cmd>Pick history scope=":"<CR>',                 '":" history')
+nmap_leader('fp', '<Cmd>Pick registers<CR>',                         'Registers')
 nmap_leader('fa', '<Cmd>Pick git_hunks scope="staged"<CR>',          'Added hunks (all)')
 nmap_leader('fA', '<Cmd>Pick git_hunks path="%" scope="staged"<CR>', 'Added hunks (current)')
 nmap_leader('fb', '<Cmd>Pick buffers<CR>',                           'Buffers')
