@@ -4,7 +4,8 @@ vim.o.writebackup = false                         -- Don't store backup
 vim.cmd("filetype plugin indent on")              -- Enble filetype plugins
 
 vim.o.breakindent   = true                        -- Indent wrapped lines to match line start
-vim.o.colorcolumn   = '+1'                        -- Draw colored column one step to the right of desired maximum width (+1 of textwidth)
+vim.o.colorcolumn   =
+'+1'                                              -- Draw colored column one step to the right of desired maximum width (+1 of textwidth)
 vim.o.laststatus    = 2                           -- Always show statusline
 vim.o.linebreak     = true                        -- Wrap long lines at 'breakat' (if 'wrap' is vim.o)
 vim.o.list          = true                        -- Show helpful character indicators
@@ -67,3 +68,6 @@ vim.o.foldmethod    = "expr"
 vim.o.foldexpr      = "nvim_treesitter#foldexpr()"
 vim.o.foldenable    = false
 vim.o.foldlevel     = 9999
+
+vim.o.spelllang     = 'en,es,uk'    -- Define spelling dictionaries
+vim.o.spelloptions  = 'camel'       -- Treat parts of camelCase words as seprate words
