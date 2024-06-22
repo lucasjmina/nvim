@@ -9,10 +9,10 @@
   "friendly-snippets": { "branch": "main", "commit": "682157939e57bd6a2c86277dfd4d6fbfce63dbac" },
   "lazy.nvim": { "branch": "main", "commit": "bc620783663ab09d16bff9fdecc07da65b2a1528" },
   "mason.nvim": { "branch": "main", "commit": "0950b15060067f752fde13a779a994f59516ce3d" },
-  "mini.nvim": { "branch": "main", "commit": "ebc8cb0c1f73ee6c53e0560957a37a2307a70f98" },
+  "mini.nvim": { "branch": "main", "commit": "63c21a99e60ee59456faa4e5a245c59eeacac4d9" },
   "nvim-cmp": { "branch": "main", "commit": "a110e12d0b58eefcf5b771f533fc2cf3050680ac" },
-  "nvim-lspconfig": { "branch": "master", "commit": "5c33bf1f708ac8cb839469e1a03d45987fec305c" },
-  "nvim-treesitter": { "branch": "master", "commit": "66ae8748fd4e8550c8b17cf115c9739aea1e4067" },
+  "nvim-lspconfig": { "branch": "master", "commit": "9baca6a403b3b2098224010fda6ff5615ae6e782" },
+  "nvim-treesitter": { "branch": "master", "commit": "122b4d3db1616c1f1305b847c5ed2217c4c329f1" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "34867c69838078df7d6919b130c0541c0b400c47" },
   "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
   "vimtex": { "branch": "master", "commit": "8ed94566e6fe3f5b163131dc374d224d2d320db7" }
