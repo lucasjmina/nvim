@@ -4,8 +4,7 @@ vim.o.writebackup = false                         -- Don't store backup
 vim.cmd("filetype plugin indent on")              -- Enble filetype plugins
 
 vim.o.breakindent   = true                        -- Indent wrapped lines to match line start
-vim.o.colorcolumn   =
-'+1'                                              -- Draw colored column one step to the right of desired maximum width (+1 of textwidth)
+vim.o.colorcolumn   = '+1'                        -- Draw colored column one step to the right of desired maximum width (+1 of textwidth)
 vim.o.laststatus    = 2                           -- Always show statusline
 vim.o.linebreak     = true                        -- Wrap long lines at 'breakat' (if 'wrap' is vim.o)
 vim.o.list          = true                        -- Show helpful character indicators
@@ -53,6 +52,10 @@ vim.o.smartindent   = true          -- Make indenting smart
 vim.o.tabstop       = 2             -- Insert 2 spaces for a tab
 vim.o.virtualedit   = 'block'       -- Allow going past the end of line in visual block mode
 vim.o.clipboard     = 'unnamedplus' -- Use system clipboard
+vim.o.undofile      = true          -- Save undo history
+vim.o.backup        = false         -- Don't store backup
+vim.o.switchbuf     = 'usetab'      -- Use already opened buffers when switching
+vim.o.writebackup   = false         -- Don't store backup
 
 vim.opt.iskeyword:append('-')       -- Treat dash separated words as a word text object
 
