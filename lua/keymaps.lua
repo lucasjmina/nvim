@@ -11,6 +11,32 @@ local xmap_leader = function(suffix, rhs, desc, opts)
     opts.desc = desc
     vim.keymap.set('x', '<Leader>' .. suffix, rhs, opts)
 end
+local keymap = function(mode, keys, cmd, opts)
+  opts = opts or {}
+  if opts.silent == nil then opts.silent = true end
+  vim.keymap.set(mode, keys, cmd, opts)
+end
+
+-- Movement
+-- Move by visible lines
+keymap({ 'n', 'x' }, 'j', [[v:count == 0 ? 'gj' : 'j']], { expr = true })
+keymap({ 'n', 'x' }, 'k', [[v:count == 0 ? 'gk' : 'k']], { expr = true })
+
+-- Window navigation
+keymap('n', '<C-H>', '<C-w>h', { desc = 'Focus on left window' })
+keymap('n', '<C-J>', '<C-w>j', { desc = 'Focus on below window' })
+keymap('n', '<C-K>', '<C-w>k', { desc = 'Focus on above window' })
+keymap('n', '<C-L>', '<C-w>l', { desc = 'Focus on right window' })
+
+-- Window resize (respecting `v:count`)
+keymap('n', '<C-Left>',  '"<Cmd>vertical resize -" . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Decrease window width' })
+keymap('n', '<C-Down>',  '"<Cmd>resize -"          . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Decrease window height' })
+keymap('n', '<C-Up>',    '"<Cmd>resize +"          . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Increase window height' })
+keymap('n', '<C-Right>', '"<Cmd>vertical resize +" . v:count1 . "<CR>"', { expr = true, replace_keycodes = false, desc = 'Increase window width' })
+
+-- Paste before/after linewise
+keymap({ 'n', 'x' }, '[p', '<Cmd>exe "put! " . v:register<CR>', { desc = 'Paste Above' })
+keymap({ 'n', 'x' }, ']p', '<Cmd>exe "put "  . v:register<CR>', { desc = 'Paste Below' })
 
 -- l is for 'LSP' (Language Server Protocol)
 local formatting_cmd = '<Cmd>lua require("conform").format({ lsp_fallback = true })<CR>'
