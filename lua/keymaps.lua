@@ -38,6 +38,9 @@ keymap('n', '<C-Right>', '"<Cmd>vertical resize +" . v:count1 . "<CR>"', { expr 
 keymap({ 'n', 'x' }, '[p', '<Cmd>exe "put! " . v:register<CR>', { desc = 'Paste Above' })
 keymap({ 'n', 'x' }, ']p', '<Cmd>exe "put "  . v:register<CR>', { desc = 'Paste Below' })
 
+-- Shorter version of the most frequent way of going outside of terminal window
+keymap('t', [[<C-h>]], [[<C-\><C-N><C-w>h]])
+
 -- l is for 'LSP' (Language Server Protocol)
 local formatting_cmd = '<Cmd>lua require("conform").format({ lsp_fallback = true })<CR>'
 nmap_leader('la', '<Cmd>lua vim.lsp.buf.signature_help()<CR>',  'Arguments popup')
