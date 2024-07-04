@@ -1,6 +1,5 @@
 return {
     'echasnovski/mini.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
     version = false,
     config = function()
         require('mini.extra').setup()
@@ -46,5 +45,7 @@ return {
         require('mini.diff').setup()
 
         require('mini.bracketed').setup()
+
+        require('mini.icons').setup()
     end
 }
