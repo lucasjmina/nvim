@@ -21,6 +21,9 @@ vim.o.winblend      = 10                          -- Make floating windows sligh
 vim.o.wrap          = false                       -- Display long lines as just one line
 vim.o.title         = true                        -- vim.o window title
 vim.o.completeopt   = 'menuone,noinsert,noselect' -- Customize completions
+
+-- Enable syntax highlighing if it wasn't already
+if vim.fn.exists('syntax_on') ~= 1 then vim.cmd('syntax enable') end
 vim.cmd("colorscheme nvim_colors")                -- vim.o colorscheme
 
 vim.o.fillchars     = table.concat(
