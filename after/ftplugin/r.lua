@@ -5,7 +5,7 @@ set.shiftwidth = 2
 set.softtabstop = 2
 
 vim.keymap.set("i", "<M-i>", " <- ", { buffer = 0 })
-vim.keymap.set("i", "<M-p>", " %>%", { buffer = 0 })
+vim.keymap.set("i", "<M-p>", " |>", { buffer = 0 })
 
 -- Indentation
 -- Don't align indentation of function args on new line with opening `(`
