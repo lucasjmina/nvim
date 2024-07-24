@@ -43,5 +43,7 @@ return {
         lspconfig.marksman.setup {}
 
         lspconfig.texlab.setup {}
+
+        lspconfig.sqls.setup {}
     end
 }
