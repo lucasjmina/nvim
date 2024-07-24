@@ -20,7 +20,5 @@ require("mini.base16").setup({
 })
 -- vim.api.nvim_set_hl(0, "Operator", {fg='#ca1243'})
 vim.api.nvim_set_hl(0, "MiniTrailspace",  { fg='#ca1243', bg=nil, strikethrough=true })
-vim.api.nvim_set_hl(0, "Search", { fg=nil, bg="#e5e5e6", bold=true})
-vim.api.nvim_set_hl(0, "CurSearch", { link="Search" })
-vim.api.nvim_set_hl(0, "IncSearch", { link="Search" })
+vim.api.nvim_set_hl(0, "Visual", { bg="#d1d1d1" })
 vim.g.colors_name = "base16_colors"
