@@ -18,7 +18,7 @@ return {
         ["<C-n>"] = cmp.mapping.select_next_item(),
         ["<C-c>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         ["<esc>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.abort()
