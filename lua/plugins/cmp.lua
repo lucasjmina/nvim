@@ -6,6 +6,7 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "saadparwaiz1/cmp_luasnip",
+    "jc-doyle/cmp-pandoc-references"
   },
   config = function()
     local cmp = require 'cmp'
@@ -50,6 +51,7 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'pandoc_references' },
         { name = 'path',    option = { get_cwd = function() return vim.fn.getcwd() end, } }, -- use nvim cwd as root
         { name = 'buffer',  keyword_length = 3 },
       }),

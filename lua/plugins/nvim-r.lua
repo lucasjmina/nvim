@@ -1,5 +1,6 @@
 return {
     {"jalvesaq/Nvim-R",
+      enabled = false,
         config = function()
             vim.g.R_assign_map = '<M-->'
             vim.g.R_df_viewer = "View(%s)"
