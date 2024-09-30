@@ -7,7 +7,7 @@ return {
       rconsole_height = 10,
       pdfviewer = "",
       setwd = "nvim",
-      df_viewer = "View(%s)",
+      -- df_viewer = "View(%s)",
       objbr_auto_start = true,
       hl_term = false
     })
