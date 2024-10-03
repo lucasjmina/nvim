@@ -9,7 +9,8 @@ return {
       setwd = "nvim",
       -- df_viewer = "View(%s)",
       objbr_auto_start = true,
-      hl_term = false
+      hl_term = false,
+      R_args = {"--no-save", "--no-restore", "--no-site-file"}
     })
   end
 }
