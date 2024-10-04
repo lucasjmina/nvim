@@ -24,7 +24,7 @@ vim.o.completeopt   = 'menuone,noinsert,noselect' -- Customize completions
 
 -- Enable syntax highlighing if it wasn't already
 if vim.fn.exists('syntax_on') ~= 1 then vim.cmd('syntax enable') end
-vim.cmd("colorscheme onelight")                -- vim.o colorscheme
+vim.cmd("colorscheme onedark")                -- vim.o colorscheme
 
 vim.o.fillchars     = table.concat(
   { 'eob: ', 'fold:╌', 'horiz:═', 'horizdown:╦', 'horizup:╩', 'vert:║', 'verthoriz:╬', 'vertleft:╣', 'vertright:╠' },
