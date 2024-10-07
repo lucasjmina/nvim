@@ -4,6 +4,9 @@ return {
   config = function ()
     require("onedark").setup({
       style = "light",
+      highlights = {
+        MatchParen = { bg = "$bg3" }
+      }
     })
   end
 }
