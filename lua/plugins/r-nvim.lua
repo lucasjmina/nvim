@@ -1,6 +1,8 @@
 return {
   "R-nvim/R.nvim",
   lazy = false,
+  -- Use latest minor release
+  version = "~0.1.0",
   config = function ()
     require("r").setup({
       rconsole_width = 0,
