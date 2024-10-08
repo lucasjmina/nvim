@@ -1,6 +1,6 @@
 return {
-  "hrsh7th/nvim-cmp",
-  version = false, -- last release is way too old
+  "iguanacucumber/magazine.nvim",
+  name = "nvim-cmp",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
