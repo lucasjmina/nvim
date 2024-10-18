@@ -6,15 +6,15 @@
   "cmp-pandoc-references": { "branch": "master", "commit": "2c808dff631a783ddd2c554c4c6033907589baf6" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
-  "conform.nvim": { "branch": "master", "commit": "40d4e98fcc3e6f485f0e8924c63734bc7e305967" },
+  "conform.nvim": { "branch": "master", "commit": "f5bd8419f8a29451e20bdb1061a54fe13d5c8de3" },
   "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" },
   "lazy.nvim": { "branch": "main", "commit": "1159bdccd8910a0fd0914b24d6c3d186689023d9" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
-  "mini.nvim": { "branch": "main", "commit": "c2352031124e90cac9d038cb8a1f1b406f7465ea" },
-  "nvim-cmp": { "branch": "main", "commit": "a0ba161706147d010c015807380d3ea840ad7ef8" },
-  "nvim-lspconfig": { "branch": "master", "commit": "c38af37e4ee71d70b7d60267d96b0a83e5d346f5" },
-  "nvim-treesitter": { "branch": "master", "commit": "19079207ba4a8c7ed956f40a111a22b1a2dfa6e8" },
-  "nvim-treesitter-textobjects": { "branch": "master", "commit": "b91c98afa6c42819aea6cbc1ba38272f5456a5cf" },
+  "mini.nvim": { "branch": "main", "commit": "e5273e8a01597e9b71c015abb2b1f4278892e12a" },
+  "nvim-cmp": { "branch": "main", "commit": "63d7acd686da35be0227af8ccf709bc3a7f54d90" },
+  "nvim-lspconfig": { "branch": "master", "commit": "541f3a2781de481bb84883889e4d9f0904250a56" },
+  "nvim-treesitter": { "branch": "master", "commit": "03452942dfbd998701d4123ccad2090e1bc7e9f1" },
+  "nvim-treesitter-textobjects": { "branch": "master", "commit": "0d79d169fcd45a8da464727ac893044728f121d4" },
   "onedark.nvim": { "branch": "master", "commit": "fae34f7c635797f4bf62fb00e7d0516efa8abe37" },
-  "vimtex": { "branch": "master", "commit": "f8b84dc1583698634a79bcbd05c4d06e2de427b2" }
+  "vimtex": { "branch": "master", "commit": "4dd3be5cc4e8f6ee7401e303a8211efb4d91bcf6" }
 }
