@@ -20,13 +20,6 @@ return {
         ["<C-c>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-        ["<esc>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.abort()
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if require("luasnip").locally_jumpable(1) then
             require("luasnip").jump(1)
