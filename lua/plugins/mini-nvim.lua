@@ -42,7 +42,9 @@ return {
 
         require('mini.git').setup()
 
-        require('mini.diff').setup()
+        require('mini.diff').setup({
+          view = { style = "number" }
+        })
 
         require('mini.bracketed').setup()
 

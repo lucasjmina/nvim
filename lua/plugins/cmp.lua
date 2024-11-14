@@ -1,6 +1,6 @@
 return {
-  "hrsh7th/nvim-cmp",
-  version = false, -- last release is way too old
+  "iguanacucumber/magazine.nvim",
+  name = "nvim-cmp",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
@@ -20,13 +20,6 @@ return {
         ["<C-c>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-        ["<esc>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.abort()
-          else
-            fallback()
-          end
-        end, { 'i', 's' }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if require("luasnip").locally_jumpable(1) then
             require("luasnip").jump(1)
