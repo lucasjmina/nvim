@@ -35,9 +35,19 @@ return {
     -- accept = { auto_brackets = { enabled = true } }
 
     -- experimental signature help support
-    trigger = { signature_help = { enabled = true } }
+    -- trigger = { signature_help = { enabled = true } },
+
+    sources = {
+      providers = {
+        path = {
+          opts = {
+            get_cwd = function() return vim.fn.getcwd() end
+          }
+        }
+      }
+    }
   },
-  -- allows extending the enabled_providers array elsewhere in your config
+   -- allows extending the enabled_providers array elsewhere in your config
   -- without having to redefining it
   opts_extend = { "sources.completion.enabled_providers" }
 }
