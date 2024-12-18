@@ -1,5 +1,6 @@
 return {
   "R-nvim/R.nvim",
+  enabled = false,
   lazy = false,
   -- Use latest minor release
   version = "~0.1.0",
