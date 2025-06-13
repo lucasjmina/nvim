@@ -2,7 +2,6 @@ return {
     -- Configs for Nvim LSP client
     "neovim/nvim-lspconfig",
     config = function()
-        local lspconfig = require('lspconfig')
         local capabilities = require('blink.cmp').get_lsp_capabilities()
         local diagnostic_opts = {
             -- Show gutter sings
@@ -19,39 +18,43 @@ return {
         }
         vim.diagnostic.config(diagnostic_opts)
 
-
-
         -- Setup language servers.
-        lspconfig.lua_ls.setup {
-          capabilities = capabilities
-        }
+        vim.lsp.enable('lua_ls')
+        vim.lsp.config('lua_ls', {
+          capabilities = { capabilities },
+        })
 
-        lspconfig.clangd.setup {
-          capabilities = capabilities
-        }
+        vim.lsp.enable('clangd')
+        vim.lsp.config('clangd', {
+          capabilities = { capabilities }
+        })
 
-        lspconfig.bashls.setup {
-          capabilities = capabilities
-        }
+        vim.lsp.enable('bashls')
+        vim.lsp.config('bashls', {
+          capabilities = { capabilities }
+        })
 
-        lspconfig.r_language_server.setup {
-            root_dir = function(fname)
-                return lspconfig.util.root_pattern("*.Rproj", ".git")(fname) or vim.loop.os_homedir()
-            end,
-            capabilities = capabilities
-        }
+        vim.lsp.enable('r_language_server')
+        vim.lsp.config('r_language_server', {
+          root_dir = function(bufnr, on_dir)
+            on_dir(vim.fs.root(bufnr, function(name) return name:match('%.Rproj$') ~= nil end) or vim.fs.root(bufnr, '.git') or vim.uv.os_homedir())
+          end,
+          capabilities = { capabilities }
+        })
 
-        lspconfig.marksman.setup {
-          capabilities = capabilities
+        vim.lsp.enable('marksman')
+        vim.lsp.config('marksman', {
+          capabilities = { capabilities }
+        })
 
-        }
+        vim.lsp.enable('texlab')
+        vim.lsp.config('texlab', {
+          capabilities = { capabilities }
+        })
 
-        lspconfig.texlab.setup {
-          capabilities = capabilities
-        }
-
-        lspconfig.sqls.setup {
-          capabilities = capabilities
-        }
+        vim.lsp.enable('sqls')
+        vim.lsp.config('sqls', {
+          capabilities = { capabilities }
+        })
     end
 }
